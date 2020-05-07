@@ -1,0 +1,66 @@
+﻿@model WebQuanLiNhaHang.Models.MonAn
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MonAn</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenMonAn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenMonAn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MaLoai)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MaLoai)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CachLam)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CachLam)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.YeuCau)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.YeuCau)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DonGia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CongDung.TenCongDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CongDung.TenCongDung)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaMonAn }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

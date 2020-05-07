@@ -1,0 +1,42 @@
+﻿@model WebQuanLiNhaHang.Models.NguyenLieu_MonAn
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>NguyenLieu_MonAn</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SoLuong)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MonAn.TenMonAn)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MonAn.TenMonAn)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NguyenLieu.TenNguyenLieu)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NguyenLieu.TenNguyenLieu)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

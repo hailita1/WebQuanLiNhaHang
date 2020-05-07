@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebQuanLiNhaHang.Models.ChiTietPhieuDB>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SoLuong)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GiamGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThanhTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoaiMon.TenLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MonAn.TenMonAn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PhieuDatBan.MaKhach)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SoLuong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GiamGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThanhTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoaiMon.TenLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MonAn.TenMonAn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PhieuDatBan.MaKhach)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

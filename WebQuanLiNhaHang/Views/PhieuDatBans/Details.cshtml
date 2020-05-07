@@ -1,0 +1,58 @@
+﻿@model WebQuanLiNhaHang.Models.PhieuDatBan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PhieuDatBan</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NgayDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NgayDung)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TongTien)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Khach.TenKhach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Khach.TenKhach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NhanVien.TenNhanVien)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NhanVien.TenNhanVien)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaPhieu }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

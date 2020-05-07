@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebQuanLiNhaHang.Models.HoaDonNhap>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayNhap)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaNhanVien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TongTien)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NhaCungCap.TenNhaCungCap)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayNhap)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaNhanVien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TongTien)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NhaCungCap.TenNhaCungCap)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaHoaDonNhap }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaHoaDonNhap }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaHoaDonNhap })
+        </td>
+    </tr>
+}
+
+</table>

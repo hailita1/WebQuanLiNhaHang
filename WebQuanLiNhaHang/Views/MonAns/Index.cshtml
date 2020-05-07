@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WebQuanLiNhaHang.Models.MonAn>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TenMonAn)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MaLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CachLam)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.YeuCau)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DonGia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CongDung.TenCongDung)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenMonAn)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CachLam)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.YeuCau)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DonGia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CongDung.TenCongDung)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MaMonAn }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MaMonAn }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MaMonAn })
+        </td>
+    </tr>
+}
+
+</table>

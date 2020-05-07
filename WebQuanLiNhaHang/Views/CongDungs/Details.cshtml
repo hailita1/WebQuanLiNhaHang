@@ -1,0 +1,26 @@
+﻿@model WebQuanLiNhaHang.Models.CongDung
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CongDung</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TenCongDung)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TenCongDung)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaCongDung }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
