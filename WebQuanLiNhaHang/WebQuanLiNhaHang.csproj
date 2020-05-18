@@ -135,6 +135,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\KhachesController.cs" />
     <Compile Include="Controllers\LoaiMonsController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\MonAnsController.cs" />
     <Compile Include="Controllers\NguyenLieuxController.cs" />
     <Compile Include="Controllers\NguyenLieu_MonAnController.cs" />
@@ -163,14 +164,13 @@
     <Compile Include="Models\LoaiMon.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\Model1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Designer.cs">
@@ -178,6 +178,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Model2.cs" />
     <Compile Include="Models\MonAn.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -199,9 +200,47 @@
     <Compile Include="Models\Que.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tAdmin.cs" />
+    <Compile Include="Models\UserDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\Admin\dist\401.html" />
+    <Content Include="Assets\Admin\dist\404.html" />
+    <Content Include="Assets\Admin\dist\500.html" />
+    <Content Include="Assets\Admin\dist\assets\demo\chart-area-demo.js" />
+    <Content Include="Assets\Admin\dist\assets\demo\chart-bar-demo.js" />
+    <Content Include="Assets\Admin\dist\assets\demo\chart-pie-demo.js" />
+    <Content Include="Assets\Admin\dist\assets\demo\datatables-demo.js" />
+    <Content Include="Assets\Admin\dist\assets\img\error-404-monochrome.svg" />
+    <Content Include="Assets\Admin\dist\charts.html" />
+    <Content Include="Assets\Admin\dist\css\styles.css" />
+    <Content Include="Assets\Admin\dist\index.html" />
+    <Content Include="Assets\Admin\dist\js\scripts.js" />
+    <Content Include="Assets\Admin\dist\layout-sidenav-light.html" />
+    <Content Include="Assets\Admin\dist\layout-static.html" />
+    <Content Include="Assets\Admin\dist\login.html" />
+    <Content Include="Assets\Admin\dist\password.html" />
+    <Content Include="Assets\Admin\dist\register.html" />
+    <Content Include="Assets\Admin\dist\tables.html" />
+    <Content Include="Assets\Admin\scripts\build-assets.js" />
+    <Content Include="Assets\Admin\scripts\build-pug.js" />
+    <Content Include="Assets\Admin\scripts\build-scripts.js" />
+    <Content Include="Assets\Admin\scripts\build-scss.js" />
+    <Content Include="Assets\Admin\scripts\clean.js" />
+    <Content Include="Assets\Admin\scripts\render-assets.js" />
+    <Content Include="Assets\Admin\scripts\render-pug.js" />
+    <Content Include="Assets\Admin\scripts\render-scripts.js" />
+    <Content Include="Assets\Admin\scripts\render-scss.js" />
+    <Content Include="Assets\Admin\scripts\sb-watch.js" />
+    <Content Include="Assets\Admin\scripts\start-debug.js" />
+    <Content Include="Assets\Admin\scripts\start.js" />
+    <Content Include="Assets\Admin\src\assets\demo\chart-area-demo.js" />
+    <Content Include="Assets\Admin\src\assets\demo\chart-bar-demo.js" />
+    <Content Include="Assets\Admin\src\assets\demo\chart-pie-demo.js" />
+    <Content Include="Assets\Admin\src\assets\demo\datatables-demo.js" />
+    <Content Include="Assets\Admin\src\assets\img\error-404-monochrome.svg" />
+    <Content Include="Assets\Admin\src\js\scripts.js" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -229,6 +268,44 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Assets\Admin\src\pug\layouts\authentication.pug" />
+    <Content Include="Assets\Admin\src\pug\layouts\dashboard.pug" />
+    <Content Include="Assets\Admin\src\pug\layouts\error.pug" />
+    <Content Include="Assets\Admin\src\pug\layouts\includes\footer.pug" />
+    <Content Include="Assets\Admin\src\pug\layouts\includes\head\css.pug" />
+    <Content Include="Assets\Admin\src\pug\layouts\includes\head\icons.pug" />
+    <Content Include="Assets\Admin\src\pug\layouts\includes\head\meta.pug" />
+    <Content Include="Assets\Admin\src\pug\layouts\includes\head\title.pug" />
+    <Content Include="Assets\Admin\src\pug\layouts\includes\navigation\sidenav.pug" />
+    <Content Include="Assets\Admin\src\pug\layouts\includes\navigation\topnav.pug" />
+    <Content Include="Assets\Admin\src\pug\layouts\includes\scripts.pug" />
+    <Content Include="Assets\Admin\src\pug\pages\401.pug" />
+    <Content Include="Assets\Admin\src\pug\pages\404.pug" />
+    <Content Include="Assets\Admin\src\pug\pages\500.pug" />
+    <Content Include="Assets\Admin\src\pug\pages\charts.pug" />
+    <Content Include="Assets\Admin\src\pug\pages\includes\datatable.pug" />
+    <Content Include="Assets\Admin\src\pug\pages\includes\page-header.pug" />
+    <Content Include="Assets\Admin\src\pug\pages\index.pug" />
+    <Content Include="Assets\Admin\src\pug\pages\layout-sidenav-light.pug" />
+    <Content Include="Assets\Admin\src\pug\pages\layout-static.pug" />
+    <Content Include="Assets\Admin\src\pug\pages\login.pug" />
+    <Content Include="Assets\Admin\src\pug\pages\password.pug" />
+    <Content Include="Assets\Admin\src\pug\pages\register.pug" />
+    <Content Include="Assets\Admin\src\pug\pages\tables.pug" />
+    <Content Include="Assets\Admin\src\scss\layout\_authentication.scss" />
+    <Content Include="Assets\Admin\src\scss\layout\_dashboard-default.scss" />
+    <Content Include="Assets\Admin\src\scss\layout\_dashboard-fixed.scss" />
+    <Content Include="Assets\Admin\src\scss\layout\_error.scss" />
+    <Content Include="Assets\Admin\src\scss\navigation\sidenav\_sidenav-dark.scss" />
+    <Content Include="Assets\Admin\src\scss\navigation\sidenav\_sidenav-light.scss" />
+    <Content Include="Assets\Admin\src\scss\navigation\sidenav\_sidenav.scss" />
+    <Content Include="Assets\Admin\src\scss\navigation\_nav.scss" />
+    <Content Include="Assets\Admin\src\scss\navigation\_topnav.scss" />
+    <Content Include="Assets\Admin\src\scss\styles.scss" />
+    <Content Include="Assets\Admin\src\scss\variables\_navigation.scss" />
+    <Content Include="Assets\Admin\src\scss\variables\_spacing.scss" />
+    <Content Include="Assets\Admin\src\scss\_global.scss" />
+    <Content Include="Assets\Admin\src\scss\_variables.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -251,9 +328,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Ques\Create.cshtml" />
     <Content Include="Views\Ques\Delete.cshtml" />
     <Content Include="Views\Ques\Details.cshtml" />
@@ -319,9 +393,12 @@
     <Content Include="Views\HoaDonNhaps\Details.cshtml" />
     <Content Include="Views\HoaDonNhaps\Edit.cshtml" />
     <Content Include="Views\HoaDonNhaps\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Assets\Client\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

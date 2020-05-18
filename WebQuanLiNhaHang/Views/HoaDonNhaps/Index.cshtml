@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WebQuanLiNhaHang.Models.HoaDonNhap>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Hóa đơn nhập";
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Thêm mới", "Create")
 </p>
 <table class="table">
     <tr>
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.NhaCungCap.TenNhaCungCap)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaHoaDonNhap }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaHoaDonNhap }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaHoaDonNhap })
+            @Html.ActionLink("Sửa", "Edit", new { id=item.MaHoaDonNhap }) |
+            @Html.ActionLink("Xem chi tiết", "Details", new { id=item.MaHoaDonNhap }) |
+            @Html.ActionLink("Xóa", "Delete", new { id=item.MaHoaDonNhap })
         </td>
     </tr>
 }
